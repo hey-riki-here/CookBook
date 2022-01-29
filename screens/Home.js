@@ -374,30 +374,36 @@ export default function App({}) {
                   style={{ height: 160, width: 300, borderRadius: 15 }}
                 />
                 <Text style={styles.modalText}>{selectedItem.title}</Text>
-                <View style={styles.iconsAndTitle}>
-                  <MaterialCommunityIcons
-                    name="check-bold"
-                    color={"#4ab567"}
-                    size={20}
-                    style={{ paddingRight: 5 }}
-                  />
-                  <Text style={{ fontSize: 22 }}>Ingredients</Text>
-                </View>
+                <ScrollView
+                  showsVerticalScrollIndicator={false}
+                  style={{ height: 300, width: 300 }}
+                >
+                  <View style={styles.iconsAndTitle}>
+                    <MaterialCommunityIcons
+                      name="check-bold"
+                      color={"#4ab567"}
+                      size={20}
+                      style={{ paddingRight: 5 }}
+                    />
+                    <Text style={{ fontSize: 22 }}>Ingredients</Text>
+                  </View>
 
-                <Text style={{ marginTop: 5, marginBottom: 5 }}>
-                  {selectedItem.ingredients}
-                </Text>
-                <View style={styles.iconsAndTitle}>
-                  <MaterialCommunityIcons
-                    name="check-bold"
-                    color={"#4ab567"}
-                    size={20}
-                    style={{ paddingRight: 5 }}
-                  />
-                  <Text style={{ fontSize: 22 }}>
-                    {selectedItem.servings} Servings
+                  <Text style={{ marginTop: 5, marginBottom: 5 }}>
+                    {selectedItem.ingredients}
                   </Text>
-                </View>
+                  <View style={styles.iconsAndTitle}>
+                    <MaterialCommunityIcons
+                      name="check-bold"
+                      color={"#4ab567"}
+                      size={20}
+                      style={{ paddingRight: 5 }}
+                    />
+                    <Text style={{ fontSize: 22 }}>
+                      {selectedItem.servings} Servings
+                    </Text>
+                  </View>
+                </ScrollView>
+
                 <TouchableOpacity
                   style={[styles.button, styles.buttonClose]}
                   onPress={() => setShowModal(false)}
@@ -412,7 +418,9 @@ export default function App({}) {
           <Modal animationType="fade" transparent={true} visible={isLoading}>
             <View style={styles.loadingCenteredView}>
               <View style={styles.loadingModalView}>
-                <Text style={styles.loadingModalText}>Getting recipes for you...</Text>
+                <Text style={styles.loadingModalText}>
+                  Getting recipes for you...
+                </Text>
                 <ActivityIndicator size="large" color="#f07176" />
               </View>
             </View>

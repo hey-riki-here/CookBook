@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { StackActions } from "@react-navigation/native";
 import {
   StyleSheet,
   Text,
@@ -132,10 +131,13 @@ export default function Profile({ route, navigation }) {
               margin: 10,
             }}
             onPress={() => {
+
               setEditing(isEditing ? false : true);
+
               setButtonLabel(isEditing ? "Update Profile" : "Save Profile");
               setHeaderName(name);
               setHeaderEmail(email);
+
               if (isEditing) {
                 fetch("http://192.168.1.3:3000/accounts/" + route.params.id, {
                   method: "PUT",
