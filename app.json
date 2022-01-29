@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "GameZone",
-    "slug": "GameZone",
+    "name": "CookBook v.2",
+    "slug": "cookbook",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

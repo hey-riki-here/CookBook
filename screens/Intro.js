@@ -1,4 +1,4 @@
-import { Image, TouchableOpacity } from "react-native";
+import { Image } from "react-native";
 import React from "react";
 
 import Onboarding from "react-native-onboarding-swiper"; // 0.4.0
@@ -6,8 +6,8 @@ import Onboarding from "react-native-onboarding-swiper"; // 0.4.0
 export default function Intro({ navigation }) {
   return (
     <Onboarding
-      onDone={() => navigation.navigate("Home")}
-      onSkip={() => navigation.navigate("Home")}
+      onDone={() => navigation.navigate("Login")}
+      onSkip={() => navigation.navigate("Login")}
       pages={[
         {
           backgroundColor: "#fff",
